@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:dioformulario/views/vistacambiante.dart';
+import 'package:dioformulario/views/Data_succes.dart';
 
-class Vista extends StatelessWidget {
-  const Vista({super.key});
+class Exito extends StatelessWidget {
+  const Exito({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.network(
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuNhTZJTtkR6b-ADMhmzPvVwaLuLdz273wvQ&s',
+            CircleAvatar(
+              radius: 100,
+              backgroundImage:  NetworkImage(
+                "http://conceptodefinicion.de/wp-content/uploads/2014/10/persona.jpg",
+              ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 20),
             Container(
               height: 400,
               width: 400,
@@ -21,7 +26,7 @@ class Vista extends StatelessWidget {
                 color: Colors.white,
                 border: Border.all(color: Colors.black, width: 4),
                 borderRadius: BorderRadius.circular(14),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Colors.black12,
                     offset: Offset(20, 20),
@@ -29,7 +34,7 @@ class Vista extends StatelessWidget {
                   ),
                 ],
               ),
-              child: const Vistacambiante(),
+              child: const DataSucces(),
             ),
           ],
         ),

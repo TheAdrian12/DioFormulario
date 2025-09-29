@@ -1,26 +1,34 @@
 import 'package:flutter/material.dart';
 
-class Loading extends StatelessWidget {
-  const Loading({super.key});
+class LoadingView extends StatelessWidget {
+  const LoadingView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: 70,
-              height: 70,
-              child: CircularProgressIndicator(
-                backgroundColor: Colors.black,
-                strokeWidth: 8,
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircularProgressIndicator(),
+              Text(
+                "Cargando...",
+                style: TextStyle(
+                  color: Colors.blueAccent,
+                  fontSize: 32,
+                  shadows: [
+                    Shadow(
+                      offset: Offset(2, 2),
+                      blurRadius: 4,
+                      color: Color.fromARGB(255, 73, 70, 70),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 12),
-            Text('Loading', style: TextStyle(fontSize: 20)),
-          ],
+            ],
+          ),
         ),
       ),
     );
